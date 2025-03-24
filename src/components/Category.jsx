@@ -5,14 +5,14 @@ const Category = () => {
     return (
         <div className='w-4/5 mx-auto my-8'>
             <h2 className='text-center text-3xl text-violet-600 font-bold'>Categories</h2>
-            <ul className='flex gap-8 justify-center mt-4'>
-                <li className='text-xl font-semibold cursor-pointer'>
+            <ul className='flex gap-12 justify-center mt-4'>
+                <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
                     <Link to="/category">Fiction</Link>
                 </li>
-                <li className='text-xl font-semibold cursor-pointer'>
+                <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
                     <Link to="/category">Non-Fiction</Link>
                 </li>
-                <li className='text-xl font-semibold cursor-pointer'>
+                <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
                     <Link to="/category">Sci-Fi</Link>
                 </li>
             </ul>

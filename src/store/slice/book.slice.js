@@ -8,12 +8,15 @@ export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state) => {
-      state.value.push({})
+    addBook: (state, action) => {
+      state.value.push({
+        id: state.value.length + 1 || 1,
+        ...action.payload
+      })
     },
   },
 })
 
-export const { increment } = booksSlice.actions;
+export const { addBook } = booksSlice.actions;
 
 export default booksSlice.reducer
