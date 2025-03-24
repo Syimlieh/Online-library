@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Books from './pages/Books.jsx'
 import AddBooks from './pages/AddBooks.jsx'
+import BookDetails from './pages/BookDetails.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/book/add",
         element: <AddBooks />
+      },
+      {
+        path: "/book/:id",
+        element: <BookDetails />
       }
     ]
   }

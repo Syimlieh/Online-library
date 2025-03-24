@@ -10,6 +10,7 @@ const AddBooks = () => {
     const [imageUrl, setImageUrl] = useState("");
     const [category, setCategory] = useState("");
     const [author, setAuthor] = useState("");
+    const [rating, setRating] = useState(0);
     const [description, setDescription] = useState("");
 
     // router
@@ -24,12 +25,13 @@ const AddBooks = () => {
             return;
         }
 
-        dispatch(addBook({ title, image: imageUrl, category, author, description }));
+        dispatch(addBook({ title, image: imageUrl, category, author, rating, description }));
 
         setTitle("")
         setCategory("")
         setImageUrl("")
         setAuthor("")
+        setRating(0)
         setDescription("")
         navigate("/browse");
     }
@@ -63,6 +65,26 @@ const AddBooks = () => {
                     <label htmlFor="author" className='text-lg text-gray-800 cursor-pointer'>Author</label>
                     <input type="text" id="author" placeholder='Enter book author' className='px-4 py-4 shadow-md shdow rounded-2xl inset-shadow-sm inset-shadow-indigo-500/50 focus-within:outline-2 focus-within:outline-indigo-500' value={author} onChange={(e) => setAuthor(e.target.value)} />
                 </span>
+
+                <span className='flex flex-col gap-3 font-semibold'>
+                    <label htmlFor="rating" className='text-lg text-gray-800 cursor-pointer'>Rating</label>
+                    <div className="flex gap-1">
+                        {[1, 2, 3, 4, 5].map(num => (
+                            <svg
+                                key={num}
+                                onClick={() => setRating(num)}
+                                className={`cursor-pointer transition-all duration-300 w-6 h-6 ${rating >= num ? 'text-yellow-400' : 'text-gray-300'
+                                    }`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 22 20"
+                            >
+                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            </svg>
+                        ))}
+                    </div>
+                </span>
+
                 <span className='flex flex-col gap-3 font-semibold'>
                     <label htmlFor="description" className='text-lg text-gray-800 cursor-pointer'>Description</label>
                     <textarea type="text" id="description" placeholder='Enter book description' className='px-4 py-4 shadow-md shdow rounded-2xl inset-shadow-sm inset-shadow-indigo-500/50 focus-within:outline-2 focus-within:outline-indigo-500' value={description} onChange={(e) => setDescription(e.target.value)} />
