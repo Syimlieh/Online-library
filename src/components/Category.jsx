@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { CATEGORIES } from '../utils/enum/book.enum';
 
 const Category = () => {
     return (
@@ -7,13 +8,13 @@ const Category = () => {
             <h2 className='text-center text-3xl text-violet-600 font-bold'>Categories</h2>
             <ul className='flex gap-12 justify-center mt-4'>
                 <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
-                    <Link to="/category">Fiction</Link>
+                    <Link to={`/category/${CATEGORIES.FICTION.toLowerCase()}`}>Fiction</Link>
                 </li>
                 <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
-                    <Link to="/category">Non-Fiction</Link>
+                    <Link to={`/category/${CATEGORIES.NON_FICTION.toLowerCase()}`}>Non-Fiction</Link>
                 </li>
                 <li className='text-xl font-semibold cursor-pointer hover:text-indigo-500'>
-                    <Link to="/category">Sci-Fi</Link>
+                    <Link to={`/category/${CATEGORIES.SCI_FI.toLowerCase()}`}>Sci-Fi</Link>
                 </li>
             </ul>
         </div>
