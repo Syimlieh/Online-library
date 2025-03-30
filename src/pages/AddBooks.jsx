@@ -90,9 +90,10 @@ const AddBooks = () => {
                     <textarea type="text" id="description" placeholder='Enter book description' className='px-4 py-4 shadow-md shdow rounded-2xl inset-shadow-sm inset-shadow-indigo-500/50 focus-within:outline-2 focus-within:outline-indigo-500' value={description} onChange={(e) => setDescription(e.target.value)} />
                 </span>
                 <button
-                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 cursor-pointer  text-gray-200 rounded-2xl ring-2 ring-violet-500/50 shadow-2xl hover:scale-105 transition-all ease-in-out duration-300"
+                    className={`px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600  text-gray-200 rounded-2xl ring-2 ring-violet-500/50 shadow-2xl hover:scale-105 transition-all ease-in-out duration-300 ${!title || !author || !category || !description ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                     onClick={handleAddBooks}
                     onKeyDown={handleAddBooks}
+                    disabled={!title || !author || !category || !description}
                 >Add Book</button>
             </form>
         </div>

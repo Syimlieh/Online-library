@@ -9,6 +9,7 @@ import Home from './pages/Home.jsx'
 import Books from './pages/Books.jsx'
 import AddBooks from './pages/AddBooks.jsx'
 import BookDetails from './pages/BookDetails.jsx'
+import NotFound from './components/Error/NotFound.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -34,8 +35,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/category/:category",
         element: <Books />
-      }
-    ]
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ])
 
