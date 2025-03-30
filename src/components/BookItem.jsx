@@ -16,6 +16,9 @@ const BookItem = ({ title, author, category, image, description }) => {
                     <p className='text-sm text-gray-700'><b>Category:</b> {category}</p>
                 </div>
             </div>
+            <button className='m-auto w-9/10 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg mb-3 cursor-pointer'>
+                View Details
+            </button>
         </div>
     )
 }

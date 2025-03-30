@@ -50,7 +50,7 @@ const BookDetails = () => {
                         {book.description}
                     </p>
                     <Link to="/browse" >
-                        <button className="mt-8 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+                        <button className="mt-8 px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-md transition">
                             Back to browse
                         </button>
                     </Link>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Booklist = ({ data }) => {
     return (
-        <div className='flex gap-8 max-w-6xl m-auto'>{
+        <div className='flex gap-8 max-w-6xl m-auto flex-wrap'>{
             data && data.map((item) => (
                 <Link to={`/book/${item.id}`} key={item.id}>
                     <BookItem
